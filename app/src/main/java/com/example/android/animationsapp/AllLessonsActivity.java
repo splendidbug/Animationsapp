@@ -3,15 +3,24 @@ package com.example.android.animationsapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import io.netopen.hotbitmapgg.library.view.RingProgressBar;
 
 public class AllLessonsActivity extends AppCompatActivity {
 
+    Animation fade;
+    TextView tv_all_lessons;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +31,18 @@ public class AllLessonsActivity extends AppCompatActivity {
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(1);
         menuItem.setChecked(true);
+        tv_all_lessons = findViewById(R.id.tv_all_lessons);
+
+        fade = AnimationUtils.loadAnimation(this, R.anim.linear_layouts_second_act);
+        new Handler().postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                tv_all_lessons.setAlpha(1);
+                tv_all_lessons.startAnimation(fade);
+            }
+        }, 0);
 
 
 

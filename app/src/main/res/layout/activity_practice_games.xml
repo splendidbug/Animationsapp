@@ -80,15 +80,15 @@
     </LinearLayout>
 
     <LinearLayout
-        android:alpha="0"
+        android:id="@+id/one"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:id="@+id/one"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="15dp"
         android:layout_marginTop="143dp"
         android:layout_marginEnd="15dp"
+        android:alpha="0"
 
         android:background="@drawable/shape">
 
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
 
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="10dp"
             android:text="Words Learnt"
             android:textColor="#FFFFFF"
             android:textSize="22sp" />
@@ -121,7 +121,7 @@
 
 
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="14dp"
+            android:layout_marginLeft="10dp"
 
             android:background="#FFFFFF" />
 
@@ -130,7 +130,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
 
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="10dp"
             android:text="Coines earned"
             android:textColor="#FFFFFF"
             android:textSize="22sp" />
@@ -180,7 +180,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="15dp"
                 android:text="Moonwalk"
-                android:textSize="24dp" />
+                android:textSize="22dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -252,7 +252,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="15dp"
                 android:text="Pillar Game"
-                android:textSize="24dp" />
+                android:textSize="22dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -324,7 +324,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:text="Spelling"
-                android:textSize="24dp" />
+                android:textSize="22dp" />
 
             <TextView
                 android:layout_width="150dp"
@@ -396,7 +396,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:text="Swipe"
-                android:textSize="24dp" />
+                android:textSize="22dp" />
 
             <TextView
                 android:layout_width="150dp"

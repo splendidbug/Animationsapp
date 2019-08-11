@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.transition.ChangeBounds;
@@ -20,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import io.netopen.hotbitmapgg.library.view.RingProgressBar;
 
 public class PracticeActivity extends AppCompatActivity {
 
@@ -27,6 +30,29 @@ public class PracticeActivity extends AppCompatActivity {
     ImageView game,trimg;
     TextView practice, games;
     CircleImageView circle;
+
+    RingProgressBar ringProgressBar;
+    int progress = 0;
+
+    Handler myHandler = new Handler(){
+
+        @Override
+        public void handleMessage(Message msg) {
+
+            if(msg.what==0)
+            {
+                if(progress<90)
+                {
+                    progress++;
+                    ringProgressBar.setProgress(progress);
+
+                }
+            }
+
+
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +71,9 @@ public class PracticeActivity extends AppCompatActivity {
         practice = findViewById(R.id.practice);
         games = findViewById(R.id.games);
         trimg = findViewById(R.id.trimg);
+
+
+
         circle = findViewById(R.id.profile_image);
         cardViewGame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +94,25 @@ public class PracticeActivity extends AppCompatActivity {
 
             }
         });
+
+        ringProgressBar = findViewById(R.id.progress_bar_1);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for(int i=0;i<100;i++)
+                {
+                    try
+                    {
+                        Thread.sleep(60);
+                        myHandler.sendEmptyMessage(0);
+                    }catch(InterruptedException e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
 
 
 

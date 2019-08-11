@@ -9,4 +9,17 @@
     <include
         layout="@layout/bottom_nav_help"/>
 
+    <TextView
+        android:id="@+id/tv_lessons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:alpha="0"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Lessons"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
 </android.support.design.widget.CoordinatorLayout>

@@ -2,15 +2,22 @@ package com.example.android.animationsapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LessonsActivity extends AppCompatActivity {
+
+    Animation fade;
+    TextView tv_lessons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +30,17 @@ public class LessonsActivity extends AppCompatActivity {
         MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
 
-
+    tv_lessons = findViewById(R.id.tv_lessons);
+        fade = AnimationUtils.loadAnimation(this, R.anim.linear_layouts_second_act);
+        new Handler().postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                tv_lessons.setAlpha(1);
+                tv_lessons.startAnimation(fade);
+            }
+        }, 0);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

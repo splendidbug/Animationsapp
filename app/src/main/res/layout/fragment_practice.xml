@@ -35,6 +35,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <io.netopen.hotbitmapgg.library.view.RingProgressBar
+        android:id="@+id/progress_bar_1"
+        style="STROKE"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:rotation="195"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+        app:layout_constraintEnd_toEndOf="@+id/profile_image"
+
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="@+id/profile_image"
+        app:layout_constraintTop_toTopOf="@+id/profile_image"
+        app:max="100"
+        app:ringColor="#FFFFFF"
+        app:ringProgressColor="#464646"
+        app:ringWidth="4dp" />
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -62,6 +81,8 @@
         app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintStart_toEndOf="@+id/profile_image"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
 
     <TextView
         android:id="@+id/textView3"
@@ -99,7 +120,7 @@
         android:text="Practice"
         android:textSize="29sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
+
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/profile_image" />

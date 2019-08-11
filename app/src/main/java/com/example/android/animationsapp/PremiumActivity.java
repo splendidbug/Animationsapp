@@ -3,14 +3,21 @@ package com.example.android.animationsapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class PremiumActivity extends AppCompatActivity {
+
+    Animation fade;
+    TextView tv_premium;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +30,17 @@ public class PremiumActivity extends AppCompatActivity {
         MenuItem menuItem = menu.getItem(4);
         menuItem.setChecked(true);
 
+        tv_premium = findViewById(R.id.tv_premium);
+        fade = AnimationUtils.loadAnimation(this, R.anim.linear_layouts_second_act);
+        new Handler().postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                tv_premium.setAlpha(1);
+                tv_premium.startAnimation(fade);
+            }
+        }, 0);
 
 
 
