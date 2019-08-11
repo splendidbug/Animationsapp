@@ -53,6 +53,7 @@ public class PremiumActivity extends AppCompatActivity {
                         Intent intent1 = new Intent(PremiumActivity.this, MainActivity.class);
                         startActivity(intent1);
                         ((Activity) PremiumActivity.this).overridePendingTransition(0,0);
+                        finish();
                         break;
 
                     case R.id.nav_allLessons:
@@ -60,17 +61,20 @@ public class PremiumActivity extends AppCompatActivity {
                         Intent intent2 = new Intent(PremiumActivity.this, AllLessonsActivity.class);
                         startActivity(intent2);
                         ((Activity) PremiumActivity.this).overridePendingTransition(0,0);
+                        finish();
                         break;
                     case R.id.nav_progress:
 
                         Intent intent3 = new Intent(PremiumActivity.this, ProgressActivity.class);
                         startActivity(intent3);
                         ((Activity) PremiumActivity.this).overridePendingTransition(0,0);
+                        finish();
                         break;
                 case R.id.nav_practice:
                     Intent intent4 = new Intent(PremiumActivity.this, PracticeActivity.class);
                     startActivity(intent4);
                     ((Activity) PremiumActivity.this).overridePendingTransition(0,0);
+                    finish();
                     break;
 //                case R.id.nav_premium:
 //

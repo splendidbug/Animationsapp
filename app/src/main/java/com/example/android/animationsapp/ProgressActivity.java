@@ -51,6 +51,7 @@ public class ProgressActivity extends AppCompatActivity {
 
                         startActivity(intent1);
                         ((Activity) ProgressActivity.this).overridePendingTransition(0,0);
+                        finish();
                         break;
 
                     case R.id.nav_allLessons:
@@ -59,6 +60,7 @@ public class ProgressActivity extends AppCompatActivity {
 
                         startActivity(intent2);
                         ((Activity) ProgressActivity.this).overridePendingTransition(0,0);
+                        finish();
                         break;
 //                    case R.id.nav_progress:
 //
@@ -71,12 +73,14 @@ public class ProgressActivity extends AppCompatActivity {
 
                     startActivity(intent4);
                     ((Activity) ProgressActivity.this).overridePendingTransition(0,0);
+                    finish();
                     break;
                 case R.id.nav_premium:
                     Intent intent5 = new Intent(ProgressActivity.this, PremiumActivity.class);
 
                     startActivity(intent5);
                     ((Activity) ProgressActivity.this).overridePendingTransition(0,0);
+                    finish();
                     break;
 
 

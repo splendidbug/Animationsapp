@@ -125,6 +125,7 @@ public class PracticeActivity extends AppCompatActivity {
                         Intent intent1 = new Intent(PracticeActivity.this, MainActivity.class);
                         startActivity(intent1);
                         ((Activity) PracticeActivity.this).overridePendingTransition(0,0);
+                        finish();
                         break;
 
                     case R.id.nav_allLessons:
@@ -132,12 +133,14 @@ public class PracticeActivity extends AppCompatActivity {
                         Intent intent2 = new Intent(PracticeActivity.this, AllLessonsActivity.class);
                         startActivity(intent2);
                         ((Activity) PracticeActivity.this).overridePendingTransition(0,0);
+                        finish();
                         break;
                     case R.id.nav_progress:
 
                         Intent intent3 = new Intent(PracticeActivity.this, ProgressActivity.class);
                         startActivity(intent3);
                         ((Activity) PracticeActivity.this).overridePendingTransition(0,0);
+                        finish();
                         break;
 //                case R.id.nav_practice:
 //
@@ -146,6 +149,7 @@ public class PracticeActivity extends AppCompatActivity {
                     Intent intent5 = new Intent(PracticeActivity.this, PremiumActivity.class);
                     startActivity(intent5);
                     ((Activity) PracticeActivity.this).overridePendingTransition(0,0);
+                    finish();
                     break;
 
 

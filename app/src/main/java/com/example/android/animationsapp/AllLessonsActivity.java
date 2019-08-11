@@ -56,6 +56,7 @@ public class AllLessonsActivity extends AppCompatActivity {
                         startActivity(intent1);
                         ((Activity) AllLessonsActivity.this).overridePendingTransition(0,0);
 
+
                         break;
 
 //                    case R.id.nav_allLessons:
@@ -69,16 +70,19 @@ public class AllLessonsActivity extends AppCompatActivity {
                         Intent intent3 = new Intent(AllLessonsActivity.this, ProgressActivity.class);
                         startActivity(intent3);
                         ((Activity) AllLessonsActivity.this).overridePendingTransition(0,0);
+                        finish();
                         break;
                 case R.id.nav_practice:
                     Intent intent4 = new Intent(AllLessonsActivity.this, PracticeActivity.class);
                     startActivity(intent4);
                     ((Activity) AllLessonsActivity.this).overridePendingTransition(0,0);
+                    finish();
                     break;
                 case R.id.nav_premium:
                     Intent intent5 = new Intent(AllLessonsActivity.this, ProgressActivity.class);
                     startActivity(intent5);
                     ((Activity) AllLessonsActivity.this).overridePendingTransition(0,0);
+                    finish();
                     break;
 
                 }
