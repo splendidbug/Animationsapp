@@ -21,6 +21,7 @@
         <activity android:name=".ProgressActivity"></activity>
         <activity android:name=".PremiumActivity"></activity>
         <activity android:name=".PracticeActivity"></activity>
+        <activity android:name=".GamingAnimationsActivity"></activity>
     </application>
 
 </manifest>

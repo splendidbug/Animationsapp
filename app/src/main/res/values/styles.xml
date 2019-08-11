@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name = "android:windowActivityTransitions">true</item>
+
     </style>
 
     <style name="Divider">
@@ -24,6 +26,14 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_marginTop">380dp</item>
         <item name="android:layout_marginBottom">50dp</item>
+    </style>
+
+
+    <style name="Divider.Vertical_2" parent="Divider">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
     </style>
 
 

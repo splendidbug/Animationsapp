@@ -1,27 +1,70 @@
 package com.example.android.animationsapp;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.transition.ChangeBounds;
+import android.support.transition.Transition;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PracticeActivity extends AppCompatActivity {
 
+    CardView cardViewGame;
+    ImageView game,trimg;
+    TextView practice, games;
+    CircleImageView circle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_practice);
 
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(3);
+
         menuItem.setChecked(true);
+
+        cardViewGame = findViewById(R.id.cardViewGame);
+        game = findViewById(R.id.game);
+        practice = findViewById(R.id.practice);
+        games = findViewById(R.id.games);
+        trimg = findViewById(R.id.trimg);
+        circle = findViewById(R.id.profile_image);
+        cardViewGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gameintent = new Intent(PracticeActivity.this, GamingAnimationsActivity.class);
+
+
+                Pair[] pairs = new Pair[5];
+                pairs[0] = new Pair<View,String>(game, "image");
+                pairs[1] = new Pair<View,String>(practice, "tv1");
+                pairs[2] = new Pair<View,String>(games, "tv2");
+                pairs[3] = new Pair<View,String>(trimg, "triangle");
+                pairs[4] = new Pair<View,String>(circle, "circle");
+
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(PracticeActivity.this,pairs);
+
+                startActivity(gameintent, options.toBundle());
+
+            }
+        });
 
 
 
@@ -63,5 +106,7 @@ public class PracticeActivity extends AppCompatActivity {
             }
         });
     }
+
+
     }
 
