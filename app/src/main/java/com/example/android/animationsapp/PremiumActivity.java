@@ -1,10 +1,12 @@
 package com.example.android.animationsapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -17,6 +19,10 @@ public class PremiumActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(4);
+        menuItem.setChecked(true);
+
 
 
 
@@ -27,25 +33,26 @@ public class PremiumActivity extends AppCompatActivity {
                     case R.id.nav_lesson:
 
                         Intent intent1 = new Intent(PremiumActivity.this, MainActivity.class);
-                        Toast.makeText(PremiumActivity.this, "Activity changed", Toast.LENGTH_SHORT).show();
                         startActivity(intent1);
-
+                        ((Activity) PremiumActivity.this).overridePendingTransition(0,0);
                         break;
 
                     case R.id.nav_allLessons:
 
                         Intent intent2 = new Intent(PremiumActivity.this, AllLessonsActivity.class);
-                        Toast.makeText(PremiumActivity.this, "Activity changed", Toast.LENGTH_SHORT).show();
                         startActivity(intent2);
+                        ((Activity) PremiumActivity.this).overridePendingTransition(0,0);
                         break;
                     case R.id.nav_progress:
 
                         Intent intent3 = new Intent(PremiumActivity.this, ProgressActivity.class);
                         startActivity(intent3);
+                        ((Activity) PremiumActivity.this).overridePendingTransition(0,0);
                         break;
                 case R.id.nav_practice:
                     Intent intent4 = new Intent(PremiumActivity.this, PracticeActivity.class);
                     startActivity(intent4);
+                    ((Activity) PremiumActivity.this).overridePendingTransition(0,0);
                     break;
 //                case R.id.nav_premium:
 //
